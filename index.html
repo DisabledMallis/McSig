@@ -14,8 +14,8 @@
 
             $.ajax({
                 type: "GET",
-                url: `https://disabledmallis.github.io/McSig/sigdb.json`,
-                crossDomain: true,
+                url:`sigdb.json`,
+                crossDomain: false,
                 success: function(result){
                     var pageResult = "";
                     //Append main accordion
