@@ -18,9 +18,9 @@
                 crossDomain: true,
                 success: function(result){
                     var pageResult = "";
-                    //Append main accordian
+                    //Append main accordion
                     pageResult += `
-                    <div class="accordion">
+                    <div class="accordion" id="mainAccordion">
                     `;
                     //Iterate editions
                     result["editions"].forEach(edition => {
@@ -29,7 +29,7 @@
                         console.log(editionName);
                         //Increment content id for this section
                         contentId++;
-                        //Append accordian item for this edition
+                        //Append accordion item for this edition
                         pageResult += (`
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="`+editionName+`">
@@ -37,7 +37,7 @@
                                     `+editionName+`
                                 </button>
                             </h2>
-                            <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#accordionExample">
+                            <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#acmainAccordion">
                                 <div class="accordion-body" id="`+editionName+`Content">
                         `);
                         //Get the versions & iterate
@@ -48,7 +48,7 @@
                             //Get version name
                             var verName = version["version"];
                             console.log(verName);
-                            //Create accordian for the version
+                            //Create accordion for the version
                             pageResult += (`
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="`+verName+`">
@@ -56,7 +56,7 @@
                                         `+verName+`
                                     </button>
                                 </h2>
-                                <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#accordionExample">
+                                <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#acmainAccordion">
                                     <div class="accordion-body">
                             `);
 
@@ -71,7 +71,7 @@
                                             `+className+`
                                         </button>
                                     </h2>
-                                    <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#accordionExample">
+                                    <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#acmainAccordion">
                                         <div class="accordion-body">
                                 `
 
@@ -90,7 +90,7 @@
                                                     `+funcName+`
                                                 </button>
                                             </h2>
-                                            <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#accordionExample">
+                                            <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#acmainAccordion">
                                                 <div class="accordion-body">
                                                     <h3>`+funcName+`</h3>
                                                     <div class="card-body"></div>
@@ -115,7 +115,7 @@
                                     `
                                 });
 
-                                //Close off this accordian item
+                                //Close off this accordion item
                                 pageResult += (`
                                         </div>
                                     </div>
@@ -124,21 +124,21 @@
                             });
                             
 
-                            //Close off this accordian item
+                            //Close off this accordion item
                             pageResult += (`
                                     </div>
                                 </div>
                             </div>
                             `);
                         });
-                        //Close off this accordian item
+                        //Close off this accordion item
                         pageResult += (`
                                 </div>
                             </div>
                         </div>
                         `);
                     });
-                    //Close main accordian
+                    //Close main accordion
                     pageResult += (`
                     </div>
                     `);
@@ -160,7 +160,7 @@
                         1.16.201
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#acmainAccordion">
                     <div class="accordion-body">
                         <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                     </div>

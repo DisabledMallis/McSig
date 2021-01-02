@@ -16,6 +16,17 @@
                                     "ghidraSig": null
                                 }
                             ]
+                        },
+                        {
+                            "name": "Mob",
+                            "functions":[
+                                {
+                                    "name": "hasComponent",
+                                    "idaSig": "40 ?? 57 48 83 ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 8B ?? 48 85",
+                                    "functionId": null,
+                                    "ghidraSig": null
+                                }
+                            ]
                         }
                     ]
                 }
