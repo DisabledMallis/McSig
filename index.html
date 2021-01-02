@@ -60,45 +60,69 @@
                                     <div class="accordion-body">
                             `);
 
-                            var functions = version["functions"];
-                            functions.forEach(func => {
+                            var classes = version["classes"];
+                            classes.forEach(theClass => {
                                 contentId++;
-                                var funcName = func["name"];
-                                var idaSig = func["idaSig"];
-                                var functionId = func["functionId"];
-                                var ghidraSig = func["ghidraSig"];
-                                console.log(funcName);
+                                var className = theClass["name"]
                                 pageResult += `
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="`+funcName+`">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse`+contentId+`" aria-expanded="false" aria-controls="collapse`+contentId+`">
-                                                `+funcName+`
-                                            </button>
-                                        </h2>
-                                        <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <h3>`+funcName+`</h3>
-                                                <div class="card-body"></div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="`+className+`">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse`+contentId+`" aria-expanded="false" aria-controls="collapse`+contentId+`">
+                                            `+className+`
+                                        </button>
+                                    </h2>
+                                    <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                `
 
-                                                <h5>IDA signature</h5>
-                                                <div class="alert bg-dark text-light">
-                                                    `+idaSig+`
-                                                </div>
+                                var functions = theClass["functions"];
+                                functions.forEach(func => {
+                                    contentId++;
+                                    var funcName = func["name"];
+                                    var idaSig = func["idaSig"];
+                                    var functionId = func["functionId"];
+                                    var ghidraSig = func["ghidraSig"];
+                                    console.log(funcName);
+                                    pageResult += `
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="`+funcName+`">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse`+contentId+`" aria-expanded="false" aria-controls="collapse`+contentId+`">
+                                                    `+funcName+`
+                                                </button>
+                                            </h2>
+                                            <div id="collapse`+contentId+`" class="accordion-collapse collapse" aria-labelledby="heading`+contentId+`" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <h3>`+funcName+`</h3>
+                                                    <div class="card-body"></div>
 
-                                                <h5>Function ID</h5>
-                                                <div class="alert bg-dark text-light">
-                                                    `+functionId+`
-                                                </div>
+                                                    <h5>IDA signature</h5>
+                                                    <div class="alert bg-dark text-light">
+                                                        `+idaSig+`
+                                                    </div>
 
-                                                <h5>Ghidra</h5>
-                                                <div class="alert bg-dark text-light">
-                                                    `+ghidraSig+`
+                                                    <h5>Function ID</h5>
+                                                    <div class="alert bg-dark text-light">
+                                                        `+functionId+`
+                                                    </div>
+
+                                                    <h5>Ghidra</h5>
+                                                    <div class="alert bg-dark text-light">
+                                                        `+ghidraSig+`
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    `
+                                });
+
+                                //Close off this accordian item
+                                pageResult += (`
+                                        </div>
                                     </div>
-                                `
+                                </div>
+                                `);
                             });
+                            
 
                             //Close off this accordian item
                             pageResult += (`
