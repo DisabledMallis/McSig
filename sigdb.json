@@ -1,0 +1,20 @@
+{
+=   "editions": [
+        {
+            "editionName": "Windows 10",
+            "versions": [
+                {
+                    "version": "1.16.201",
+                    "functions": [
+                        {
+                            "name": "Func",
+                            "idaSig": null,
+                            "functionId": null,
+                            "ghidraSig": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
