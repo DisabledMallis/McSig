@@ -8,25 +8,44 @@
                     "classes": [
                         {
                             "name": "Actor",
-                            "functions":[
+                            "fields":[
+                                {
+                                    "name": "position",
+                                    "offset": "0xFF",
+                                    "type": "Vec3 (Float[3])"
+                                }
+                            ],
+                            "vFunctions":[
                                 {
                                     "name": "hasComponent",
+                                    "tableOffset": 0,
                                     "idaSig": "40 ?? 57 48 83 ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 8B ?? 48 85",
                                     "functionId": null,
                                     "ghidraSig": null
                                 }
-                            ]
+                            ],
+                            "functions":[]
                         },
                         {
                             "name": "Mob",
-                            "functions":[
+                            "inherits": "Actor",
+                            "fields":[
+                                {
+                                    "name": "position",
+                                    "offset": "0xFF",
+                                    "type": "Vec3 (Float[3])"
+                                }
+                            ],
+                            "vFunctions":[
                                 {
                                     "name": "hasComponent",
+                                    "tableOffset": 0,
                                     "idaSig": "40 ?? 57 48 83 ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 8B ?? 48 85",
                                     "functionId": null,
                                     "ghidraSig": null
                                 }
-                            ]
+                            ],
+                            "functions":[]
                         }
                     ]
                 }
