@@ -7,11 +7,11 @@
                     "version": "1.16.201",
                     "classes": [
                         {
-                            "name": "Class",
+                            "name": "Actor",
                             "functions":[
                                 {
-                                    "name": "Func",
-                                    "idaSig": null,
+                                    "name": "hasComponent",
+                                    "idaSig": "40 ?? 57 48 83 ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 8B ?? 48 85",
                                     "functionId": null,
                                     "ghidraSig": null
                                 }
