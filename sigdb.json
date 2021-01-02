@@ -5,12 +5,17 @@
             "versions": [
                 {
                     "version": "1.16.201",
-                    "functions": [
+                    "classes": [
                         {
-                            "name": "Func",
-                            "idaSig": null,
-                            "functionId": null,
-                            "ghidraSig": null
+                            "name": "Class",
+                            "functions":[
+                                {
+                                    "name": "Func",
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null
+                                }
+                            ]
                         }
                     ]
                 }
