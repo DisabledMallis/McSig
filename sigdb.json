@@ -118,6 +118,118 @@
                                     "functionId": null,
                                     "ghidraSig": null,
                                     "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "reloadHardcoded",
+                                    "tableOffset": 2,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "initializeComponents",
+                                    "tableOffset": 3,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "reloadComponents",
+                                    "tableOffset": 4,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "reset",
+                                    "tableOffset": 8,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "getOnDeathExperience",
+                                    "tableOffset": 9,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "getOwnerEntityType",
+                                    "tableOffset": 10,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "remove",
+                                    "tableOffset": 11,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "setPos",
+                                    "tableOffset": 12,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "getPredictedMovementValues",
+                                    "tableOffset": 13,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "getPos",
+                                    "tableOffset": 14,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "getPosOld",
+                                    "tableOffset": 15,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "getPosExtrapolated",
+                                    "tableOffset": 16,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "setRot",
+                                    "tableOffset": 19,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
+                                },
+                                {
+                                    "name": "setSneaking",
+                                    "tableOffset": 92,
+                                    "idaSig": null,
+                                    "functionId": null,
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
                                 }
                             ],
                             "functions":[]
@@ -130,14 +242,6 @@
                                 {
                                     "name": "hasComponent",
                                     "tableOffset": 0,
-                                    "idaSig": null,
-                                    "functionId": null,
-                                    "ghidraSig": null,
-                                    "author": "DisabledMallis"
-                                },
-                                {
-                                    "name": "reloadHardcoded",
-                                    "tableOffset": 1,
                                     "idaSig": null,
                                     "functionId": null,
                                     "ghidraSig": null,
