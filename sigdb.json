@@ -7,12 +7,90 @@
                     "version": "1.16.201",
                     "classes": [
                         {
+                            "name": "MC_IDENTIFIER",
+                            "fields":[
+                                {
+                                    "name": "IdentifierKey",
+                                    "offset": "0x0",
+                                    "type": "std::string (msvc)"
+                                },
+                                {
+                                    "name": "IdentifierValue",
+                                    "offset": "0x32",
+                                    "type": "std::string (msvc)"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "AABB",
+                            "fields":[
+                                {
+                                    "name": "CornerA",
+                                    "offset": "0x0",
+                                    "type": "Vector3"
+                                },
+                                {
+                                    "name": "CornerB",
+                                    "offset": "0xC",
+                                    "type": "Vector3"
+                                },
+                                {
+                                    "name": "Width",
+                                    "offset": "0x14",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Height",
+                                    "offset": "0x18",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
                             "name": "Actor",
                             "fields":[
                                 {
-                                    "name": "position",
-                                    "offset": "0xFF",
-                                    "type": "Vec3 (Float[3])"
+                                    "name": "LookingVector",
+                                    "offset": "0x120",
+                                    "type": "Vector2"
+                                },
+                                {
+                                    "name": "LookingVector_2",
+                                    "offset": "0x128",
+                                    "type": "Vector2"
+                                },
+                                {
+                                    "name": "OnGound",
+                                    "offset": "0x1C4",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "UnitsTraveled",
+                                    "offset": "0x230",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "BlocksTraveled",
+                                    "offset": "0x240",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "UnitsTraveled",
+                                    "offset": "0x230",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "ActorTypeID",
+                                    "offset": "0x3C8",
+                                    "type": "MC_IDENTIFIER"
+                                },
+                                {
+                                    "name": "Hitbox",
+                                    "offset": "0x498",
+                                    "type": "AABB"
+                                },
+                                {
+
                                 }
                             ],
                             "vFunctions":[
@@ -29,18 +107,12 @@
                         {
                             "name": "Mob",
                             "inherits": "Actor",
-                            "fields":[
-                                {
-                                    "name": "position",
-                                    "offset": "0xFF",
-                                    "type": "Vec3 (Float[3])"
-                                }
-                            ],
+                            "fields":[],
                             "vFunctions":[
                                 {
                                     "name": "hasComponent",
                                     "tableOffset": 0,
-                                    "idaSig": "40 ?? 57 48 83 ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 8B ?? 48 85",
+                                    "idaSig": null,
                                     "functionId": null,
                                     "ghidraSig": null
                                 },
