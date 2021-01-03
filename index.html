@@ -88,147 +88,155 @@
 
                                 //Fields accordion
                                 contentId++;
-                                pageResult += accordionHeader(className+"_fields", "Fields");
-                                function createField(fieldName, fieldOffset, fieldType){
-                                    pageResult += accordionHeader(fieldName);
-                                    pageResult += `
-                                        <h3>`+fieldName+`</h3>
-                                        <div class="card-body"></div>
-
-                                        <h5>Offset</h5>
-                                        <div class="alert bg-dark text-light">
-                                            `+fieldOffset+`
-                                        </div>
-
-                                        <h5>Type</h5>
-                                        <div class="alert bg-dark text-light">
-                                            `+fieldType+`
-                                        </div>
-                                    `;
-                                    pageResult += accordionFooter();
-                                }
                                 var fields = theClass["fields"];
-                                if(baseClass){
-                                    fields = [].concat(fields, baseClass["fields"]);
-                                }
-                                fields.sort(function(a,b){return a["offset"]-b["offset"]});
-                                fields.forEach(field=>{
-                                    var fieldName = field["name"];
-                                    var fieldOffset = field["offset"];
-                                    var fieldType = field["type"];
-                                    
-                                    createField(fieldName, fieldOffset, fieldType);
-                                });
-                                pageResult += accordionFooter();
+                                if(fields)
+                                {
+                                    pageResult += accordionHeader(className+"_fields", "Fields");
+                                    function createField(fieldName, fieldOffset, fieldType){
+                                        pageResult += accordionHeader(fieldName);
+                                        pageResult += `
+                                            <h3>`+fieldName+`</h3>
+                                            <div class="card-body"></div>
 
+                                            <h5>Offset</h5>
+                                            <div class="alert bg-dark text-light">
+                                                `+fieldOffset+`
+                                            </div>
 
-                                //VFunc accordion
-                                contentId++;
-                                pageResult += accordionHeader(className+"_vFunctions", "vTable");
-
-                                function createFunction(func, isOverride){
-                                    contentId++;
-                                    var funcName = func["name"];
-                                    if(isOverride){
-                                        funcName += " (override)"
+                                            <h5>Type</h5>
+                                            <div class="alert bg-dark text-light">
+                                                `+fieldType+`
+                                            </div>
+                                        `;
+                                        pageResult += accordionFooter();
                                     }
-                                    var tableOffset = func["tableOffset"];
-                                    var idaSig = func["idaSig"];
-                                    var functionId = func["functionId"];
-                                    var ghidraSig = func["ghidraSig"];
-                                    console.log(funcName);
-                                    pageResult += accordionHeader(funcName+" ("+tableOffset+")");
-                                    pageResult += `
-                                                    <h3>`+funcName+`</h3>
-                                                    <div class="card-body"></div>
-
-                                                    <h5>IDA signature</h5>
-                                                    <div class="alert bg-dark text-light">
-                                                        `+idaSig+`
-                                                    </div>
-
-                                                    <h5>Function ID</h5>
-                                                    <div class="alert bg-dark text-light">
-                                                        `+functionId+`
-                                                    </div>
-
-                                                    <h5>Ghidra</h5>
-                                                    <div class="alert bg-dark text-light">
-                                                        `+ghidraSig+`
-                                                    </div>
-                                    `
+                                    if(baseClass){
+                                        fields = [].concat(fields, baseClass["fields"]);
+                                    }
+                                    fields.sort(function(a,b){return a["offset"]-b["offset"]});
+                                    fields.forEach(field=>{
+                                        var fieldName = field["name"];
+                                        var fieldOffset = field["offset"];
+                                        var fieldType = field["type"];
+                                        
+                                        createField(fieldName, fieldOffset, fieldType);
+                                    });
                                     pageResult += accordionFooter();
                                 }
+
+                                
 
                                 var usedIndexes = [];
                                 var vFunctions = theClass["vFunctions"];
-                                var baseVTable;
-                                if(baseClass) {
-                                    vFunctions = [].concat(vFunctions, baseClass["vFunctions"]);
-                                    baseVTable = baseClass["vFunctions"];
-                                }
-                                vFunctions.sort(function(a,b){
-                                    return a["tableOffset"]-b["tableOffset"];
-                                });
-                                vFunctions.forEach(func => {
-                                    var isOverride = false;
-                                    var skip = false;
-                                    if(baseVTable){
-                                        baseVTable.forEach(bfunc => {
-                                            if(bfunc["tableOffset"]==func["tableOffset"]){
-                                                isOverride = true;
-                                                if(bfunc==func){
-                                                    skip = true;
+                                if(vFunctions){
+                                    //VFunc accordion
+                                    contentId++;
+                                    pageResult += accordionHeader(className+"_vFunctions", "vTable");
+
+                                    function createFunction(func, isOverride){
+                                        contentId++;
+                                        var funcName = func["name"];
+                                        if(isOverride){
+                                            funcName += " (override)"
+                                        }
+                                        var tableOffset = func["tableOffset"];
+                                        var idaSig = func["idaSig"];
+                                        var functionId = func["functionId"];
+                                        var ghidraSig = func["ghidraSig"];
+                                        console.log(funcName);
+                                        pageResult += accordionHeader(funcName+" ("+tableOffset+")");
+                                        pageResult += `
+                                                        <h3>`+funcName+`</h3>
+                                                        <div class="card-body"></div>
+
+                                                        <h5>IDA signature</h5>
+                                                        <div class="alert bg-dark text-light">
+                                                            `+idaSig+`
+                                                        </div>
+
+                                                        <h5>Function ID</h5>
+                                                        <div class="alert bg-dark text-light">
+                                                            `+functionId+`
+                                                        </div>
+
+                                                        <h5>Ghidra</h5>
+                                                        <div class="alert bg-dark text-light">
+                                                            `+ghidraSig+`
+                                                        </div>
+                                        `
+                                        pageResult += accordionFooter();
+                                    }
+
+                                    var baseVTable;
+                                    if(baseClass) {
+                                        vFunctions = [].concat(vFunctions, baseClass["vFunctions"]);
+                                        baseVTable = baseClass["vFunctions"];
+                                    }
+                                    vFunctions.sort(function(a,b){
+                                        return a["tableOffset"]-b["tableOffset"];
+                                    });
+                                    vFunctions.forEach(func => {
+                                        var isOverride = false;
+                                        var skip = false;
+                                        if(baseVTable){
+                                            baseVTable.forEach(bfunc => {
+                                                if(bfunc["tableOffset"]==func["tableOffset"]){
+                                                    isOverride = true;
+                                                    if(bfunc==func){
+                                                        skip = true;
+                                                    }
                                                 }
-                                            }
-                                        });
-                                    }
-                                    if(skip){
-                                        return;
-                                    }
-                                    createFunction(func, isOverride);
-                                    usedIndexes += (func["tableOffset"]);
-                                });
+                                            });
+                                        }
+                                        if(skip){
+                                            return;
+                                        }
+                                        createFunction(func, isOverride);
+                                        usedIndexes += (func["tableOffset"]);
+                                    });
+                                }
 
 
                                 //Close off this accordion item
                                 pageResult += accordionFooter();
 
                                 var functions = theClass["functions"];
-                                functions.forEach(func => {
-                                    contentId++;
-                                    var funcName = func["name"];
-                                    var idaSig = func["idaSig"];
-                                    var functionId = func["functionId"];
-                                    var ghidraSig = func["ghidraSig"];
-                                    console.log(funcName);
-                                    pageResult += accordionHeader(funcName);
-                                    pageResult += `
-                                                    <h3>`+funcName+`</h3>
-                                                    <div class="card-body"></div>
+                                if(functions){
+                                    functions.forEach(func => {
+                                        contentId++;
+                                        var funcName = func["name"];
+                                        var idaSig = func["idaSig"];
+                                        var functionId = func["functionId"];
+                                        var ghidraSig = func["ghidraSig"];
+                                        console.log(funcName);
+                                        pageResult += accordionHeader(funcName);
+                                        pageResult += `
+                                                        <h3>`+funcName+`</h3>
+                                                        <div class="card-body"></div>
 
-                                                    <h5>IDA signature</h5>
-                                                    <div class="alert bg-dark text-light">
-                                                        `+idaSig+`
-                                                    </div>
+                                                        <h5>IDA signature</h5>
+                                                        <div class="alert bg-dark text-light">
+                                                            `+idaSig+`
+                                                        </div>
 
-                                                    <h5>Function ID</h5>
-                                                    <div class="alert bg-dark text-light">
-                                                        `+functionId+`
-                                                    </div>
+                                                        <h5>Function ID</h5>
+                                                        <div class="alert bg-dark text-light">
+                                                            `+functionId+`
+                                                        </div>
 
-                                                    <h5>Ghidra</h5>
-                                                    <div class="alert bg-dark text-light">
-                                                        `+ghidraSig+`
+                                                        <h5>Ghidra</h5>
+                                                        <div class="alert bg-dark text-light">
+                                                            `+ghidraSig+`
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    `
-                                });
+                                        `
+                                    });
+                                    //Close off this accordion item
+                                    pageResult += accordionFooter();
+                                }
 
-                                //Close off this accordion item
-                                pageResult += accordionFooter();
                             });
                             
 

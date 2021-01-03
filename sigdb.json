@@ -75,11 +75,6 @@
                                     "type": "float"
                                 },
                                 {
-                                    "name": "UnitsTraveled",
-                                    "offset": "0x230",
-                                    "type": "float"
-                                },
-                                {
                                     "name": "ActorTypeID",
                                     "offset": "0x3C8",
                                     "type": "MC_IDENTIFIER"
@@ -90,7 +85,14 @@
                                     "type": "AABB"
                                 },
                                 {
-
+                                    "name": "Position",
+                                    "offset": "0x4BC",
+                                    "type": "Vector3"
+                                },
+                                {
+                                    "name": "Velocity",
+                                    "offset": "0x4D4",
+                                    "type": "Vector3"
                                 }
                             ],
                             "vFunctions":[
