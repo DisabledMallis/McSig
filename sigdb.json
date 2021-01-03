@@ -12,12 +12,14 @@
                                 {
                                     "name": "IdentifierKey",
                                     "offset": "0x0",
-                                    "type": "std::string (msvc)"
+                                    "type": "std::string (msvc)",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "IdentifierValue",
                                     "offset": "0x32",
-                                    "type": "std::string (msvc)"
+                                    "type": "std::string (msvc)",
+                                    "author": "DisabledMallis"
                                 }
                             ]
                         },
@@ -27,22 +29,26 @@
                                 {
                                     "name": "CornerA",
                                     "offset": "0x0",
-                                    "type": "Vector3"
+                                    "type": "Vector3",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "CornerB",
                                     "offset": "0xC",
-                                    "type": "Vector3"
+                                    "type": "Vector3",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "Width",
                                     "offset": "0x14",
-                                    "type": "float"
+                                    "type": "float",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "Height",
                                     "offset": "0x18",
-                                    "type": "float"
+                                    "type": "float",
+                                    "author": "DisabledMallis"
                                 }
                             ]
                         },
@@ -52,47 +58,56 @@
                                 {
                                     "name": "LookingVector",
                                     "offset": "0x120",
-                                    "type": "Vector2"
+                                    "type": "Vector2",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "LookingVector_2",
                                     "offset": "0x128",
-                                    "type": "Vector2"
+                                    "type": "Vector2",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "OnGound",
                                     "offset": "0x1C4",
-                                    "type": "bool"
+                                    "type": "bool",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "UnitsTraveled",
                                     "offset": "0x230",
-                                    "type": "float"
+                                    "type": "float",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "BlocksTraveled",
                                     "offset": "0x240",
-                                    "type": "float"
+                                    "type": "float",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "ActorTypeID",
                                     "offset": "0x3C8",
-                                    "type": "MC_IDENTIFIER"
+                                    "type": "MC_IDENTIFIER",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "Hitbox",
                                     "offset": "0x498",
-                                    "type": "AABB"
+                                    "type": "AABB",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "Position",
                                     "offset": "0x4BC",
-                                    "type": "Vector3"
+                                    "type": "Vector3",
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "Velocity",
                                     "offset": "0x4D4",
-                                    "type": "Vector3"
+                                    "type": "Vector3",
+                                    "author": "DisabledMallis"
                                 }
                             ],
                             "vFunctions":[
@@ -101,7 +116,8 @@
                                     "tableOffset": 0,
                                     "idaSig": "40 ?? 57 48 83 ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 8B ?? 48 85",
                                     "functionId": null,
-                                    "ghidraSig": null
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
                                 }
                             ],
                             "functions":[]
@@ -116,14 +132,16 @@
                                     "tableOffset": 0,
                                     "idaSig": null,
                                     "functionId": null,
-                                    "ghidraSig": null
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
                                 },
                                 {
                                     "name": "reloadHardcoded",
                                     "tableOffset": 1,
                                     "idaSig": null,
                                     "functionId": null,
-                                    "ghidraSig": null
+                                    "ghidraSig": null,
+                                    "author": "DisabledMallis"
                                 }
                             ],
                             "functions":[]

@@ -95,7 +95,7 @@
                                 if(fields)
                                 {
                                     pageResult += accordionHeader(className+"_fields", "Fields");
-                                    function createField(fieldName, fieldOffset, fieldType){
+                                    function createField(fieldName, fieldOffset, fieldType, fieldAuthor){
                                         pageResult += accordionHeader(fieldName);
                                         pageResult += `
                                             <h3>`+fieldName+`</h3>
@@ -110,6 +110,7 @@
                                             <div class="alert bg-dark text-light">
                                                 `+fieldType+`
                                             </div>
+                                            <p>Added by `+fieldAuthor+`</p>
                                         `;
                                         pageResult += accordionFooter();
                                     }
@@ -121,8 +122,9 @@
                                         var fieldName = field["name"];
                                         var fieldOffset = field["offset"];
                                         var fieldType = field["type"];
+                                        var fieldAuthor = field["author"];
                                         
-                                        createField(fieldName, fieldOffset, fieldType);
+                                        createField(fieldName, fieldOffset, fieldType, fieldAuthor);
                                     });
                                     pageResult += accordionFooter();
                                 }
@@ -146,6 +148,7 @@
                                         var idaSig = func["idaSig"];
                                         var functionId = func["functionId"];
                                         var ghidraSig = func["ghidraSig"];
+                                        var author = func["author"];
                                         console.log(funcName);
                                         pageResult += accordionHeader(funcName+" ("+tableOffset+")");
                                         pageResult += `
@@ -166,6 +169,7 @@
                                                         <div class="alert bg-dark text-light">
                                                             `+ghidraSig+`
                                                         </div>
+                                                        <p>Added by `+author+`</p>
                                         `
                                         pageResult += accordionFooter();
                                     }
@@ -211,6 +215,7 @@
                                         var idaSig = func["idaSig"];
                                         var functionId = func["functionId"];
                                         var ghidraSig = func["ghidraSig"];
+                                        var author = func["author"];
                                         console.log(funcName);
                                         pageResult += accordionHeader(funcName);
                                         pageResult += `
@@ -231,6 +236,8 @@
                                                         <div class="alert bg-dark text-light">
                                                             `+ghidraSig+`
                                                         </div>
+
+                                                        <p>Added by `+author+`</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -262,6 +269,7 @@
 
         <h1>McSig</h1>
         <p>A public Minecraft: Bedrock Edition function signature & class info database</p>
+        <p><a href="https://github.com/DisabledMallis/McSig">Contribute</a></p>
 
         <!--
         <div class="accordion" id="mainDb">
