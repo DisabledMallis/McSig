@@ -53,6 +53,22 @@
                             ]
                         },
                         {
+                            "name": "ClientInstance",
+                            "fields":[],
+                            "vFunctions":[
+                                {
+                                    "name": "update",
+                                    "tableOffset": 18,
+                                    "idaSig": "?? 89 ?? ?? ?? ?? 89 ?? ?? ?? ?? 89 ?? ?? ?? 55 41 ?? 41 ?? 41 ?? 41 ?? 48 ?? ?? ?? ?? ?? ?? ?? 48 81 ?? ?? ?? ?? ?? 48 8B ?? ?? ?? ?? ?? 48 33 ?? ?? 89 ?? ?? ?? ?? ?? 44 0F ?? ?? 48 8B ?? 45",
+                                    "functionId": null,
+                                    "ghidraSig": ".\\x89....\\x89....\\x89...\\x55\\x41.\\x41.\\x41.\\x41.\\x48.......\\x48\\x81.....\\x48\\x8B.....\\x48\\x33..\\x89.....\\x44\\x0F..\\x48\\x8B.\\x45",
+                                    "author": "DisabledMallis"
+                                    
+                                }
+                            ],
+                            "functions":[]
+                        },
+                        {
                             "name": "Actor",
                             "fields":[
                                 {
